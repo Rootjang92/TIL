@@ -1,4 +1,5 @@
 #How to use git and github
+
 - shell : 커널과 사용자가 '대화'하기 위한 소프트웨어
 - bash를 사용, zsh가 현재 가장 완벽.
 - vim = 메모장 ex) vi - 파일명 / insert모드(i) , esc - normal mode
