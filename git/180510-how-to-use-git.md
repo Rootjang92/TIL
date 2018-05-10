@@ -16,6 +16,15 @@ git order word
  - commit -m
  - check out + 고유주소 - 돌아가기
  - clone - 커밋된 git repo불러오기.
-
+    - add commit push 순서
 commit은 1작업에 하나씩 해야 한다.
 명확한 그에 대한 트랙킹이 가능하게 하기 위해서.
+
+branch - 분기점을 생성해서 독립적으로 코드를 변경할 수 있는 평행우주
+master - 오픈소스, 통합소스. 
+평균적으로 develop 에서 작업
+
+git branch {이름}
+            -r
+            -a
+    
