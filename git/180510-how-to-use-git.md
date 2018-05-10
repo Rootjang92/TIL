@@ -16,3 +16,6 @@ git order word
  - commit -m
  - check out + 고유주소 - 돌아가기
  - clone - 커밋된 git repo불러오기.
+
+commit은 1작업에 하나씩 해야 한다.
+명확한 그에 대한 트랙킹이 가능하게 하기 위해서.
