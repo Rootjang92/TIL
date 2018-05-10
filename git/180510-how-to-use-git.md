@@ -8,7 +8,7 @@
     Blob - Information of all files
     Commit - file information
 workspace(like harddisk) -- add -- index -- commit -- local repository == push(upload) -- remote repository(github server)
-
+!!!!
 git order word
  - remote + 명령어 add 주소
  - push + 서버 URL / origin(서버 URL별명)
