@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>float을 가상선택자 :after로 clear 하는 방법 예제</title>
+<style type="text/css">
+* {
+  margin: 0; padding:0; font-size:1em;
+  }
+body {
+  background: #fff; margin:10px; font-size:.75em;
+  }
+.header {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  }
+.container {
+  border: 2px solid #ccc;
+  background: #fff;
+  }
+.container::after{
+  content: "";
+  clear: both;
+ }
+.left {
+  float: left;
+  width: 40%;
+  padding: 10px;
+  border: 1px solid #181818;
+  background: yellowgreen;
+  }
+.right {
+  float: right;
+  width: 40%;
+  padding: 10px;
+  border: 1px solid #181818;
+  background: yellowgreen;
+  }
+.footer {
+  clear:both;
+  margin-top: 10px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <p>header</p>
+  </div>
+  <div class="container">
+    <div class="left">
+      <p><strong>left </strong></p>
+    </div>
+    <div class="right">
+      <p><strong>right</strong></p>
+    </div>
+  </div>
+  <div class="footer">
+    <p>footer</p>
+  </div>
+</body>
+</html>
