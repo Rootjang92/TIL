@@ -1,0 +1,70 @@
+@charset "utf-8";
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+@import url("normalize.css");
+@import url("fontello.css");
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6{
+  margin: 0;
+  padding: 0;
+}
+ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+html{
+  font-size: 10px;
+}
+
+body{
+  background-color: #fff;
+  font-size: 1.4rem;
+  color: #181818;
+  font-family: 'spoqa Han Sans';
+}
+.wrapper{
+  background-color: silver;
+  background-image: url(images/bg_flower.png);
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+}
+.header, .visual, .main, .slogan, .footer{
+  width: 940px;
+  margin: 0 auto;
+}
+.header{
+  background-color: #fff;
+  padding: 0 30px 40px;
+  position: relative;
+  border-radius: 0 0 15px 15px;
+}
+.logo{
+  position: absolute;
+  top: 45px;
+  left: 65px;
+}
+.member{
+  position: relative;
+  text-align: right;
+  font-size: 0;
+  padding: 10px 0;
+  right: 0;
+}
+.member li{
+  display: inline-block;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+.member li:nth-child(n+2)::before{
+  content: ":"
+}
+.member a{
+  padding: 5px 10px;
+}
