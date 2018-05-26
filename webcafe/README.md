@@ -1,0 +1,1 @@
+This folder is webcafe example pratice folder.
