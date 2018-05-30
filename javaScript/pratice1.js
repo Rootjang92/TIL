@@ -1,7 +1,7 @@
 // 문제1 : for문을 사용하여 0부터 10미만의 정수 중에서 짝수만을 작은 수부터 출력하시오.
 // for(var i = 0; i < 10; i +=2){
 //   console.log(i);
-// }
+// // }
 
 // 문제2 for문을 사용하여 0부터 10미만의 정수 중에서 짝수만을 작은 수부터 문자열로 출력하시오.
 // var str = '';
@@ -23,7 +23,7 @@
 //문제4 while문을 사용하여 0부터 10까지 정수 중에서 짝수만을 작은 수부터 출력하시오.
 
 // var i = 0;
-// while(i < 10){
+// while(i <= 10){
 //   if(i % 2 === 0) {
 //     console.log(i);
 //   }
@@ -88,16 +88,24 @@
 // 높이(line)가 5
 
 // function triangle(num){
-// var result = '';
+// var line = '';
 
 // var flower = '*';
-// for(var i = 0; i < num; i++){
-//   result += flower + '\n';
-//   flower += '*';
-// }
-// return result;
+//     for(var i = 0; i < num; i++){
+//       line += flower + '\n';
+//       flower += '*';
+//       }
+//   return line;
 // }
 // console.log(triangle(5));
+
+// var line = '';
+// var flower = '*';
+// for(var i = 0; i < 5; i++){
+//   line += flower + '\n';
+//   flower += '*';
+// }
+// console.log(line);
 
 // 문제11. 트리 출력하기
 // 다음을 참고하여 *(별)로 트리를 문자열로 완성하라. 
@@ -114,3 +122,25 @@
 // return result;
 // }
 // console.log(triangle(3) + triangle(5));
+
+// var line = '';
+// var flower = '*';
+//   for(var i = 0; i < 5; i++){
+//     line += flower + '\n'
+//     flower += '*';
+//     if(flower === '***' && i === 2){
+//       line = '';
+//       flower = '*';
+//     }
+//   }
+//   console.log(line);
+
+// var line = '';
+//   for(var i = 0; i <= 7; i++){
+//     console.log('*' + line);
+//     line += '*';
+  
+//   if( line === '***' && i === 2){
+//     var line = '';
+//   }
+//  }
