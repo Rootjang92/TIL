@@ -87,4 +87,5 @@ console.log(d.toDateString());
 
       console.log(now);
       setTimeout(printNow, 1000);
+      // 타이머함수 = 전역함수
 }());
