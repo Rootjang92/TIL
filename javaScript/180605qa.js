@@ -154,24 +154,24 @@
 // toWeirdCase함수는 문자열 s를 매개변수로 입력받는다. 문자열 s에 각 단어의 짝수번째 인덱스 문자는 대문자로, 
 // 홀수번째 인덱스 문자는 소문자로 바꾼 문자열을 리턴하도록 함수를 완성하라. 
 //예를 들어 s가 'hello world'라면 첫번째 단어는 'HeLlO', 두번째 단어는 'WoRlD'로 바꿔 'HeLlO WoRlD'를 리턴한다.
-// 주의) 문자열 전체의 짝/홀수 인덱스가 아니라 단어(공백을 기준)별로 짝/홀수 인덱스를 판단한다.
+// // 주의) 문자열 전체의 짝/홀수 인덱스가 아니라 단어(공백을 기준)별로 짝/홀수 인덱스를 판단한다.
 
-function toWeirdCase(s) {
-  var newArr = s.split(' '); // s를 배열로 만들어 각 문자열을 split 한다.
-  var str = ''; // 배열을 나눈 값을 넣는다.
-  for(var i = 0; i < newArr.length; i++){
-   for(var j = 0; j < newArr[i].length; j++){ // 배열 i번째 인수의 길이 반환.
-     if(j % 2 === 0){ // 나눠진 배열을 다시 for문으로 돌려서 합치기 위해. + 조건 맞추기.
-       str += newArr[i][j].toUpperCase();
-     }
-     else{
-       str += newArr[i][j].toLowerCase();
-     }
-   }
-   newArr[i] = str; // str에 값을 다시 넣어주고.
-   str = ''; // 다시 빈 문자열로 만들어 초기화 해야 다른 배열값을 넣을 수 있음.
-  }
-  return newArr.join(' '); //배열값 합치기.
-}
-console.log(toWeirdCase('hello world'));    // 'HeLlO WoRlD'
-console.log(toWeirdCase('my name is lee')); // 'My NaMe Is LeE
+// function toWeirdCase(s) {
+//   var newArr = s.split(' '); // s를 배열로 만들어 각 문자열을 split 한다.
+//   var str = ''; // 배열을 나눈 값을 넣는다.
+//   for(var i = 0; i < newArr.length; i++){
+//    for(var j = 0; j < newArr[i].length; j++){ // 배열 i번째 인수의 길이 반환.
+//      if(j % 2 === 0){ // 나눠진 배열을 다시 for문으로 돌려서 합치기 위해. + 조건 맞추기.
+//        str += newArr[i][j].toUpperCase();
+//      }
+//      else{
+//        str += newArr[i][j].toLowerCase();
+//      }
+//    }
+//    newArr[i] = str; // str에 값을 다시 넣어주고.
+//    str = ''; // 다시 빈 문자열로 만들어 초기화 해야 다른 배열값을 넣을 수 있음.
+//   }
+//   return newArr.join(' '); //배열값 합치기.
+// }
+// console.log(toWeirdCase('hello world'));    // 'HeLlO WoRlD'
+// console.log(toWeirdCase('my name is lee')); // 'My NaMe Is LeE
