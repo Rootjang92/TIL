@@ -1,0 +1,52 @@
+<!-- <!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <label for='username'>User name</label>
+  <input type='text' id='username'>
+  <em id = 'message'></em>
+   <script>
+     var MIN_USER_NAME_LENGTH = 2;
+     var elem = document.getElementById('username');
+     var msg = document.getElementById('message');
+     function checkUserNameLength(n){
+       if(elem.value.length < n){
+         msg.innerHTML = '이름은 ' + n + '자 이상. ';
+       } else {
+         msg.innerHTML = '';
+       }
+     }
+
+     elem.addEventListener('blur', function(){
+       checkUserNameLength(MIN_USER_NAME_LENGTH);
+     })
+  </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">Button</button>
+  <script>
+    var elem = document.getElementById('btn');
+    elem.addEventListener('click', function(){
+      console.log(this);
+      console.log(event.currentTarget);
+      console.log(this === event.currentTarget);
+    });
+  </script>
+</body>
+</html>
