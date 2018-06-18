@@ -1,0 +1,53 @@
+<!-- <!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <p>클릭하세요. 클릭한 곳의 좌표가 표시됩니다.</p>
+  <em id="message"></em>
+  <script>
+    function showCoords(e){
+      var msg = document.getElementById('message');
+      msg.innerHTML = 
+      'clientX value: ' + e.clientX + '<br>' +
+      'clientY value: ' + e.clientY;
+    }
+    addEventListener('click', showCoords);
+  </script>
+</body>
+</html> -->
+
+<!-- 히든 -->
+
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <button id="btn1">Hide me 1</button>
+    <button id="btn2">Hide me 2</button>
+  </div>
+  <script>
+    function hide(e){
+      e.target.style.visibility = 'hidden';
+      // this.style.visibility = 'hidden';
+    }
+
+    // document.getElementById('btn1').addEventListener('click', hide);
+    // document.getElementById('btn2').addEventListener('click', hide);
+
+    var container = document.querySelector('.container');
+    container.addEventListener('click', hide);
+  </script>
+</body>
+</html>
+
