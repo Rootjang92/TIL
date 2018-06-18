@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .red { color: #ff0000; }
+    .blue { color: #0000ff; }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Cities</h1>
+    <ul>
+      <li id="one" class="red">Seoul</li>
+      <li id="two" class="red">London</li>
+      <li id="three" class="red">Newyork</li>
+      <li id="four">Tokyo</li>
+    </ul>
+  </div>
+  <script>
+    var elems = document.getElementsByClassName('red');
+    for (var i = elems.length - 1; i >= 0; i--){
+      elems[i].className = 'blue';
+    }
+  </script>
+</body>
+</html>
