@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <p>클로저를 활용한 counting</p>
+  <button type="button" onclick="myFunction()">Count!</button>
+
+  <p id="demo">0</p>
+  <!-- 버튼에 고유 id 부여. -->
+  <script>
+    // 클로저를 위한 즉시실행함수.
+    var add = (function() {
+      var counter = 0;
+      return function (){
+        return ++counter;
+      }
+    }());
+    // 최초 한번만 실행되기 때문에 반환값 유지.
+    function myFunction() {
+      document.getElementById('demo').innerHTML = add();
+    }
+    // HTML안에 add 함수 추가.
+  </script>
+</body>
+</html>
