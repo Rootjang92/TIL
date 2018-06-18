@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <p>새로고침으로 다시 실행해 보세요.</p>
+  <script>
+    var fade = function (node){
+      var level = 1; // 자유변수. 2 : 함수 fade의 자유변수 level은 1로 초기화. 
+      var step = function(){ // 내부함수, 지역변수 level을 사용.
+        var hex = level.toString(16); // 4 : step 함수는 지역변수 hex를 갖는다.(16진수 문자열)
+        // 변수 level을 16진수로 만드는 변수 hex
+
+        node.style.backgroundColor = '#ff' + hex // 5. : 배경색 변경.
+
+        if(level < 15){ // 6. : 16진수 내 범위인지 확인.
+          level += 1;
+          setTimeout(step, 100);  // 7 : level을 1 증가시키고 다시 step 함수 호출.
+          // 100ms로 
+        }
+      };
+      // setTimeout 실행 이후, fade 함수 종료. 하지만 100ms 이후 step 실행.
+      // 외부함수 fade보다 내부 함수 step이 더 오래 남아 있음. 
+      setTimeout(step, 100); // 3 : 
+    };
+    
+    fade(document.body); // 1 : fade 함수가 document.body를 인자로 받아 호출한다.
+
+    // fade 함수는 이미 반환되었지만 함수 내 변수들은 이를 필요로 하는 내부함수가 하나 이상 존재하면 계속 유지된다.
+    // 실제 변수에 접근한다.
+  </script>
+</body>
+</html>
