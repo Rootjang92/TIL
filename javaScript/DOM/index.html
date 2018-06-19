@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .red  { color: #ff0000; }
+      .blue { color: #0000ff; }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Cities</h1>
+      <ul>
+        <li id="one" class="red">Seoul</li>
+        <li id="two" class="red">London</li>
+        <li id="three" class="red">Newyork</li>
+        <li id="four">Tokyo</li>
+      </ul>
+    </div>
+    <!-- <script>
+     var elems = document.getElementsByClassName('red');
+     var arr = [].slice.call(elems);
+     console.log(arr);
+
+    array.forEach(el => el.className {
+      'blue'
+    });
+    </script> -->
+    <!-- <script>
+      var elems = document.querySelectorAll('.red');
+      for (var i = 0; i < elems.length; i++){
+        elems[i].className = 'blue';
+      }
+    </script> -->
+    <!-- <script>
+      var elems = document.getElementsByTagName('li');
+      for (var i = 0; i < elems.length; i++){
+        elems[i].className = 'blue';
+      }
+    </script> -->
+    <!-- 탐색 -->
+    <!-- <script>
+      var elem = document.querySelector('#two');
+      var parentNode = elem.parentNode;
+      parentNode.className = 'blue'; 
+      // 캐스케이팅 -> 자식요소 우선, tokyo만 파란색으로.
+    </script> -->
+    <!-- <script>
+      var elem = document.querySelector('ul');
+
+      elem.firstChild.className = 'blue';
+      elem.lastChild.className = 'blue';
+      // 요소 사이 줄바꿈 요소등을 텍스트 노드로 인식한다.
+    </script>  -->
+  </body>
+</html>
