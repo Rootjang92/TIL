@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    html, body { height: 100%; }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <p>버블링 이벤트, 캡쳐 이벤 <button>버튼</button></p>
+  <script>
+    var body = document.querySelector('body');
+    var para = document.querySelector('p');
+    var button = document.querySelector('button');
+
+    body.addEventListener('click', function(){
+      console.log('Handler for body.');
+    });
+
+    para.addEventListener('click', function(){
+      console.log('Handler for paragraph');
+    }, true);
+    
+    button.addEventListener('click', function(){
+      console.log('Handler for button.');
+    });
+  </script>
+</body>
+</html>
