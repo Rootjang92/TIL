@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <em id="message"></em>
+  <p> 클릭한 곳에 좌표가 표시됩니다.</p>
+  <script>
+  function showCoords(e, msg){
+    msg.innerHTML = 
+      'clientX value: ' + e.clientX + '<br>' +
+      'clientY value: ' + e.clientY;
+  }
+
+  var msg = document.getElementById('message');
+
+  addEventListener('click', function (e) {
+    showCoords(e, msg);
+  });
+  </script>
+</body>
+</html>
