@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>To do List!</title>
+</head>
+<body>
+  <input type="text" placeholder="Enter to do" class="inputDo">
+  <button class="addButton">Add to do!</button>
+
+  <ul>
+    <li><input type="checkbox" checked><span>todo</span> <button>del</button></li>
+  </ul>
+  <script>
+    // element select
+    var todos = [];
+    var addBtn = document.querySelector('.addButton');
+    var todoInput = document.querySelector('.inputDo');
+    var list = document.querySelector('ul');
+    
+    function addTodo(todo) {
+      if (!todo) return;
+      list.innerHTML += '<li><span>' + todo + '</span> <button>del</button></li>';
+    };
+    
+    // event
+     list.addEventListener('click', function(e){
+      //  console.log(e.target, e.target.parentNode);
+        if(e.target.nodeName !== 'BUTTON') return;
+        this.removeChild(e.target.parentNode); // 부모가 지우는 것.
+      });
+
+    addBtn.addEventListener('click', function() {
+      // list.innerHTML += '<li><span>' + todoInput.value + '</span> <button>del</button></li>'
+      addTodo(todoInput.value);
+      todoInput.value = '';
+    });
+    
+    todoInput.addEventListener('keyup', function(e) {
+      if (e.keyCode !== 13) return;
+      // list.innerHTML += '<li><span>' + todoInput.value + '</span> <button>del</button></li>';
+      addTodo(this.value);
+      this.value = '';
+     });
+
+     window.addEventListener('load', function(){
+       console.log('load');
+       todos = [
+         {id : 1, content: 'HTML', completed: true },
+         {id : 2, content: 'CSS', completed: false },
+         {id : 3, content: 'JavaScript', completed: true }
+       ];
+
+      todos.forEach(function(todo){
+        console.log(todo);
+         var checked = (todo.completed === true) ? checked : '';
+         list.innerHTML += '<li><input type="checkbox" checked><span>'+ todo.content + '</span> <button>del</button></li>'
+      });
+     });
+
+  </script>
+</body>
+</html>
