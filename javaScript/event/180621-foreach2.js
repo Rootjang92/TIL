@@ -19,7 +19,7 @@ console.log(map());
 // => 3
 
 function getMax(arr){
-return Math.max.apply(null, arr);
+  return Math.max.apply(null, arr);
 };
 console.log(getMax(map()));
 
@@ -57,17 +57,76 @@ console.log(todos);
 //   { id: 3, content: 'HTML', completed: true },
 //   { id: 2, content: 'CSS', completed: true },
 //   { id: 1, content: 'Javascript', completed: false }
-// ];
+// ]
 
 // true -> false
 
-function completed(){
- return todos.map(function (todo, index, arr){
-  if(todo.id === 3){ 
-  todo.completed = true;
-  };
-   return todos;
- });
+function changeCom(){
+  todos = todos.map(function(todo){
+    return todo.id === 3 ? Object.assign({}, todo, { completed : !todo.completed }) : todo;
+  });
 };
-console.log(completed());
-    
+changeCom();
+console.log(todos);
+
+
+// object.assign({}, todo, { completed : !todo.completed }); 
+// 뒤에 있는 객체(3)와 앞에 있는 개체(2)를 merge하여 빈 배열에 return 한다.
+
+
+// 6. todos에서 모든 요소의 completed 프로퍼티 값을 true로 설정하는 함수를 작성하라.
+
+ function changeTrue(){
+  return todos = todos.map(function(todo){
+    return !todo.completed ? Object.assign({}, todo, { completed : true }) : todo;
+  });
+ };
+console.log(changeTrue());
+
+// 7. todos에서 완료한 할일의 갯수를 구하는 함수를 작성하라.
+
+function counterTodo(){
+  return todos.filter(function(todo) {
+    return todo.completed;
+  }).length;
+};
+console.log(counterTodo());
+
+// todos.filter(function(todo){
+//   return todo.completed === true;
+// })
+ 
+
+
+
+// 7. todos에서 완료(complted: true)한 할일의 갯수를 구하는 함수를 구하여라.
+
+
+
+
+// todosㅔㅅ = todos.filter(function(todo){
+//   return todo.id !== +e.target.parentNode.id;
+// });
+// console.log('[Result', todos);
+
+
+
+// function getNextID(){
+//   var ids = todos.map(function (todo){
+//     return todo.id;
+//   });
+//   return todo.length ? Math.max.apply(null, ids) + 1 : 1;
+// };
+
+// function addTodo(todo) {
+//   if (!todo) return;
+//   // list.innerHTML += '<li><span>' + todo + '</span> <button>del</button></li>';
+//   // 추가 할 todo 객체
+//   // 새로운 true 객체
+  
+//   todos = [{
+//     id: getNextID(),
+//     content: todoInput.value,
+//     completed: false
+//   }];
+// };
