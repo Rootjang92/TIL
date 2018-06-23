@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>To do List!!</title>
+</head>
+<body>
+  <input type="text" placeholder="enter to do" class="inputDo">
+  <button class="addButton">Add to do</button>
+
+  <ul>
+    <!-- <li><input type="checkbox" checked><span>HTML <button>del</button></span></li> -->
+    <!-- <li><input type="checkbox" checked><span>CSS <button>del</button></span></li> -->
+    <!-- <li><input type="checkbox" checked><span>JavaScript <button>del</button></span></li> -->
+  </ul>
+
+  <script>
+   var todos = [];
+   var Addbutton = document.querySelector('.addButton');
+   var todoInput = document.querySelector('.inputDo');
+   var list = document.querySelector('ul');
+  // function 
+
+  function generateHTML(){
+    list.innerHTML = '';
+    todos.forEach(function(todo){
+      var checked = todo.completed ? 'checked' : '';
+      list.innerHTML += '<li id = "' + todo.id + '"><input type="checkbox"' + checked + '><span>' + todo.content + '<button>del</button></span></li>' 
+    });
+  };
+
+  function addNextid(){
+    var ids = todos.map(function(todo){
+      return todo.id; 
+    })
+    return todos.length ? Math.max.apply(null, ids) + 1 : 1;
+  };
+
+  function addTodo(todo){
+    if (!todo) return;
+    todos = [{
+      id: addNextid(),
+      content: todo,
+      completed: false
+    }].concat(todos); // 추가되는 객체.
+    generateHTML();
+  };
+
+   // Add to list event
+   Addbutton.addEventListener('click', function(){
+    //  list.innerHTML = '<li id = "' + todo.id + '"><input type="checkbox"' + checked + '><span>' + todoInput.value + '<button>del</button></span></li>'
+   addTodo(todoInput.value);
+   todoInput.value = '';
+   });
+
+   // key event
+   todoInput.addEventListener('keyup', function(e){
+    //  console.log(e);
+    if(e.keyCode !== 13) return;
+    // list.innerHTML += '<li><input type="checkbox" checked><span>' + todoInput.value + '<button>del</button></span></li>' 
+    addTodo(this.value);
+    this.value = '';
+   });
+
+   // checkbox and Delete event
+   list.addEventListener('click', function(e){
+     if(e.target.nodeName === 'INPUT'){
+       todos = todos.map(function(todo) {
+         return todo.id === +e.target.parentNode.id ? Object.assign({}, todo, { completed : !todo.completed }) : todo;
+       }); console.log(todos);
+     } else if(e.target.nodeName === 'BUTTON'){
+       todos = todos.filter(function(todo){
+         return todo.id !== +e.target.parentNode.id;
+       });
+       generateHTML();
+      };
+    });
+ 
+
+
+   // reset HTML event
+   window.addEventListener('load', function(){
+     todos = [
+       {id : 1, content: 'HTML', completed: true },
+       {id : 2, content: 'CSS', completed: false },
+       {id : 3, content: 'JavaScript', completed: true },
+       {id : 4, content: 'Angular', completed: true }
+      ];
+      generateHTML();
+    //  list.innerHTML = '';
+    //  todos.forEach(function(todo){
+    //    var checked = todo.completed ? 'checked' : '';
+    //    list.innerHTML += '<li id = "' + todo.id + '"><input type="checkbox"' + checked + '"><span>' + todo.content + '<button>del</button></span></li>' 
+      });
+  </script>
+</body>
+</html>
